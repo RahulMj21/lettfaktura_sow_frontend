@@ -1,0 +1,126 @@
+/* <-------------styling presets starts----------> */
+:root {
+  --color-white: #fff;
+  --color-off-white: #ccc;
+  --text-sm: 1.4rem;
+  --text-md: 1.5rem;
+  --text-lg: 1.8rem;
+  --font-normal: 400;
+  --font-semibold: 600;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: var(--text-md);
+  font-family: sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg);
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+  letter-spacing: 0.4px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  display: inline-block;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+/* <-------------styling presets ends--------> */
+
+/* <-------------utility classes---------> */
+.container {
+  width: 102.4rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* <-------------utility classes---------> */
+
+/* <-------------header starts---------> */
+.header .container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 8rem;
+}
+.header .left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.header .logo {
+  height: 3.2rem;
+}
+.header .nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.header .nav a {
+  text-decoration: none;
+  color: var(--color-white);
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-weight: var(--font-semibold);
+}
+.header .flag {
+  height: 1.8rem;
+  width: 2.6rem;
+}
+.header .language-switcher {
+  position: relative;
+}
+.header .language-switcher-btn {
+  background: transparent;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-weight: var(--font-semibold);
+}
+.header .language-switcher .language-switcher-dropdown {
+  position: absolute;
+  top: 2.6rem;
+  right: 0;
+  background: var(--color-white);
+  height: max-content;
+  border-radius: 1rem;
+  padding: 0.8rem 0.4rem;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* display: none; */
+}
+.header .language-switcher .dropdown-btn {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: full;
+  gap: 1rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.4rem;
+  transition: 0.45s;
+}
+.header .language-switcher .dropdown-btn:hover {
+  background: var(--color-off-white);
+}
+
+/* <-------------header ends---------> */
