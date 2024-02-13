@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Header = ({ logo, links, languages }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   const toggleDropdown = () => {
     setShowDropdown((prev) => !prev);
@@ -11,14 +12,27 @@ const Header = ({ logo, links, languages }) => {
     setShowDropdown(false);
   };
 
+  const toggleMobileNav = () => {
+    setShowMobileNav((prev) => !prev);
+  };
+
+  const closeMobileNav = () => {
+    setShowMobileNav(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
-        <div className="left">
-          <a href="/">
-            <img src={logo} alt="logo image" className="logo" />
+        <div className="left" onBlur={closeMobileNav}>
+          <button className="hamburger" onClick={toggleMobileNav}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+          <a href="/" className="logo">
+            <img src={logo} alt="logo image" />
           </a>
-          <nav className="nav">
+          <nav className={`nav ${showMobileNav ? "show" : ""}`}>
             {links.map((link) => (
               <a className="nav-link" href={link.href} key={link.text}>
                 {link.text.replaceAll("_", " ")}

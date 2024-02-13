@@ -3,6 +3,7 @@
   /* colors  */
   --color-white: #fff;
   --color-off-white: #ccc;
+  --color-black: #000;
   --color-green: #089e1e;
 
   /* font sizes */
@@ -63,7 +64,7 @@ button {
 
 /* <-------------utility classes---------> */
 .container {
-  width: 102.4rem;
+  width: 95rem;
   max-width: 90%;
   margin: 0 auto;
 }
@@ -75,21 +76,44 @@ button {
   display: flex;
   align-items: center;
   gap: 3rem;
-  height: 8rem;
+  height: 10rem;
 }
 .header .left {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
 }
-.header .logo {
+.header .hamburger {
+  position: relative;
+  height: 1.5rem;
+  width: 2.4rem;
+  background: transparent;
+  display: none;
+}
+.header .hamburger .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background: var(--color-white);
+  border-radius: 0.2rem;
+}
+.header .hamburger .bar:nth-child(2) {
+  top: 50%;
+}
+.header .hamburger .bar:nth-child(3) {
+  top: 100%;
+}
+.header .logo img {
   height: 3.2rem;
 }
 .header .nav {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 .header .nav a {
   text-decoration: none;
@@ -97,6 +121,12 @@ button {
   text-transform: capitalize;
   white-space: nowrap;
   font-weight: var(--font-semibold);
+  transition:
+    color 0.4s,
+    background-color 0.4s;
+}
+.header .nav a:hover {
+  color: var(--color-off-white);
 }
 .header .flag {
   height: 1.8rem;
@@ -149,7 +179,7 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
 }
 .terms .terms-heading {
   color: var(--color-white);
@@ -188,17 +218,48 @@ button {
 /* <-------------login page ends---------> */
 
 /* <-------------tablet styles---------> */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+  /* <-------------header starts---------> */
+  .header .logo {
+    display: none;
+  }
+  .header .left .hamburger {
+    display: inline-block;
+  }
+  .header .nav {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 30rem;
+    max-width: calc(100vw - 20%);
+    top: 4rem;
+    left: -4%;
+    background-color: var(--color-white);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  .header .nav.show {
+    display: flex;
+  }
+  .header .nav a {
+    display: inline-block;
+    width: 100%;
+    color: var(--color-black);
+    padding: 2rem 3.2rem;
+  }
+  .header .nav a:hover {
+    color: var(--color-black);
+    background-color: var(--color-off-white);
+  }
+
   /* <-------------terms page starts---------> */
   .terms .terms-content {
     max-width: 100%;
   }
-
-  /* <-------------terms page ends---------> */
 }
-/* <-------------tablet styles---------> */
 
 /* <-------------mobile styles---------> */
 @media screen and (max-width: 480px) {
 }
-/* <-------------mobile styles---------> */
