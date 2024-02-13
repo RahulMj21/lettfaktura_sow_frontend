@@ -1,10 +1,17 @@
 /* <-------------styling presets starts----------> */
 :root {
+  /* colors  */
   --color-white: #fff;
   --color-off-white: #ccc;
+  --color-green: #089e1e;
+
+  /* font sizes */
   --text-sm: 1.4rem;
   --text-md: 1.5rem;
   --text-lg: 1.8rem;
+  --text-xl: 2.4rem;
+
+  /* font weights */
   --font-normal: 400;
   --font-semibold: 600;
 }
@@ -19,6 +26,12 @@
 html {
   font-size: 62.5%;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-size: var(--text-md);
   font-family: sans-serif;
@@ -29,6 +42,11 @@ body {
   background-size: cover;
   overflow-x: hidden;
   letter-spacing: 0.4px;
+  background-attachment: fixed;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 a {
   text-decoration: none;
@@ -40,6 +58,7 @@ button {
   font: inherit;
   cursor: pointer;
 }
+
 /* <-------------styling presets ends--------> */
 
 /* <-------------utility classes---------> */
@@ -87,7 +106,7 @@ button {
   position: relative;
 }
 .header .language-switcher-btn {
-  background: transparent;
+  background-color: transparent;
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -98,7 +117,7 @@ button {
   position: absolute;
   top: 2.6rem;
   right: 0;
-  background: var(--color-white);
+  background-color: var(--color-white);
   height: max-content;
   border-radius: 1rem;
   padding: 0.8rem 0.4rem;
@@ -109,7 +128,7 @@ button {
   /* display: none; */
 }
 .header .language-switcher .dropdown-btn {
-  background: transparent;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,7 +139,66 @@ button {
   transition: 0.45s;
 }
 .header .language-switcher .dropdown-btn:hover {
-  background: var(--color-off-white);
+  background-color: var(--color-off-white);
 }
-
 /* <-------------header ends---------> */
+
+/* <-------------terms page starts---------> */
+.terms .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 8rem 0 4rem;
+}
+.terms .terms-heading {
+  color: var(--color-white);
+  font-size: var(--text-xl);
+}
+.terms .back-button {
+  padding: 1.2rem 4rem;
+  font-size: var(--text-lg);
+  border-radius: 4rem;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  font-weight: var(--font-semibold);
+}
+.terms .terms-content {
+  width: 75rem;
+  max-width: 90%;
+  padding: 4rem;
+  border-radius: 2rem;
+  background-color: var(--color-white);
+  line-height: 2.8rem;
+  text-align: center;
+  font-size: var(--text-sm);
+}
+.terms .terms-content span {
+  font-weight: var(--font-semibold);
+}
+/* <-------------terms page ends---------> */
+
+/* <-------------dashboard page starts---------> */
+/* <-------------dashboard page ends---------> */
+
+/* <-------------register page starts---------> */
+/* <-------------register page ends---------> */
+
+/* <-------------login page starts---------> */
+/* <-------------login page ends---------> */
+
+/* <-------------tablet styles---------> */
+@media screen and (max-width: 768px) {
+  /* <-------------terms page starts---------> */
+  .terms .terms-content {
+    max-width: 100%;
+  }
+
+  /* <-------------terms page ends---------> */
+}
+/* <-------------tablet styles---------> */
+
+/* <-------------mobile styles---------> */
+@media screen and (max-width: 480px) {
+}
+/* <-------------mobile styles---------> */

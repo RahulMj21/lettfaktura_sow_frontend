@@ -1,5 +1,16 @@
+import { useState } from "react";
+
 const Header = ({ logo, links, languages }) => {
-  console.log({ logo, links, languages });
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
+
+  const closeDropdown = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -15,8 +26,8 @@ const Header = ({ logo, links, languages }) => {
             ))}
           </nav>
         </div>
-        <div className="language-switcher">
-          <button className="language-switcher-btn">
+        <div className="language-switcher" onBlur={closeDropdown}>
+          <button onClick={toggleDropdown} className="language-switcher-btn">
             <span>English</span>
             <img
               src="https://storage.123fakturere.no/public/flags/GB.png"
@@ -24,14 +35,20 @@ const Header = ({ logo, links, languages }) => {
               className="flag"
             />
           </button>
-          <div className="language-switcher-dropdown">
-            {languages.map((language) => (
-              <button key={language.name} className="dropdown-btn">
-                <span>{language.name}</span>
-                <img src={language.icon} alt={language.name} className="flag" />
-              </button>
-            ))}
-          </div>
+          {showDropdown && (
+            <div className="language-switcher-dropdown">
+              {languages.map((language) => (
+                <button key={language.name} className="dropdown-btn">
+                  <span>{language.name}</span>
+                  <img
+                    src={language.icon}
+                    alt={language.name}
+                    className="flag"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </header>
