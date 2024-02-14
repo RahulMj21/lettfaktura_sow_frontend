@@ -1,44 +1,5 @@
 import { useEffect, useRef } from "react";
 import Header from "../components/header";
-const headerProps = {
-  logo: "https://storage.123fakturere.no/public/icons/diamond.png",
-  languages: [
-    {
-      id: 1,
-      name: "Bokmål",
-      code: "bokmal",
-      icon: "https://storage.123fakturere.no/public/flags/NO.png",
-      is_default: true,
-      is_active: true,
-      is_premium: false,
-    },
-    {
-      id: 2,
-      name: "Nynorsk",
-      code: "nynorsk",
-      icon: "https://storage.123fakturere.no/public/flags/NO.png",
-      is_default: false,
-      is_active: true,
-      is_premium: false,
-    },
-    {
-      id: 3,
-      name: "English",
-      code: "english",
-      icon: "https://storage.123fakturere.no/public/flags/GB.png",
-      is_default: false,
-      is_active: true,
-      is_premium: false,
-    },
-  ],
-  links: [
-    { text: "home", href: "/" },
-    { text: "orders", href: "/orders" },
-    { text: "our_customer", href: "/customers" },
-    { text: "about_us", href: "/about" },
-    { text: "contact_us", href: "/contact" },
-  ],
-};
 
 const termsContent = `
 <p><span>VED Å</span> klikke på Fakturere Nå så velger dere å laste ned ifølge den informasjon som dere har lagt inn og teksten på last ned siden og vilkårene her, og aksepterer samtidig vilkårene her.</p>
@@ -76,17 +37,23 @@ const Terms = () => {
     if (contentRef.current) contentRef.current.innerHTML = termsContent;
   }, []);
   return (
-    <main>
-      <Header {...headerProps} />
-      <section className="terms">
+    <div
+      className="terms page"
+      style={{
+        background:
+          "url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg) center/cover fixed",
+      }}
+    >
+      <Header />
+      <main className="main">
         <div className="container">
           <h1 className="terms-heading">Terms</h1>
-          <button className="back-button">Close and Go Back</button>
+          <button className="btn-primary back-button">Close and Go Back</button>
           <div className="terms-content" ref={contentRef} />
-          <button className="back-button">Close and Go Back</button>
+          <button className="btn-primary back-button">Close and Go Back</button>
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 };
 
