@@ -1,14 +1,6 @@
 import Header from "../components/header";
 
 const Login = () => {
-  // const handleOpen = () => {
-  //   window.open(
-  //     document.URL,
-  //     "_blank",
-  //     "location=yes,height=570,width=520,scrollbars=yes,status=yes",
-  //   );
-  // };
-
   return (
     <div
       className="page auth login"
@@ -33,9 +25,9 @@ const Login = () => {
                 <input type="password" id="password" placeholder="Password" />
                 <p className="input-error"></p>
               </div>
-              <div>
-                <input id="remember-me" type="checkbox" />
-                <label htmlFor="remember-me">Remember me</label>
+              <div className="remember-me">
+                <input id="remember" type="checkbox" />
+                <label htmlFor="remember">Remember me</label>
               </div>
               <button className="btn-primary auth-btn">Log in</button>
             </form>

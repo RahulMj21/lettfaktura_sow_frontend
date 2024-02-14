@@ -13,6 +13,7 @@
   --text-lg: 1.8rem;
   --text-xl: 2.4rem;
   --text-2xl: 4rem;
+  --text-normal: 1.6rem;
 
   /* font weights */
   --font-normal: 400;
@@ -208,8 +209,8 @@ button {
 .auth .content {
   width: 75rem;
   max-width: 90%;
-  padding: 4rem;
-  border-radius: 2rem;
+  padding: 6.5rem 4rem;
+  border-radius: 4rem;
   background-color: var(--color-white);
   text-align: center;
   margin: 8rem 0 28.8rem;
@@ -217,6 +218,10 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  font-size: var(--text-normal);
+}
+.register .content {
+  width: 65rem;
 }
 .auth .heading {
   color: var(--color-red);
@@ -224,10 +229,11 @@ button {
 }
 .auth .form {
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: column;
   gap: 2rem;
   text-align: left;
+  margin: 2rem 0 0;
 }
 .auth .form .input-group {
   display: flex;
@@ -235,15 +241,50 @@ button {
   width: 100%;
   gap: 0.8rem;
 }
+.auth .form .input-group input {
+  height: 5.6rem;
+  border-radius: 2.5rem;
+  border: 1px solid var(--color-off-white);
+  padding: 0 1.6rem;
+  font-size: var(--text-normal);
+}
+.auth .form .input-error {
+  color: var(--color-red);
+  font-size: var(--text-md);
+}
+.auth .form .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.auth .form .remember-me input {
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+}
+.auth .form .remember-me label {
+  font-size: var(--text-sm);
+}
+.auth .other-options {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0 0;
+}
 .auth .auth-btn {
   width: 25rem;
-  margin: 0 auto;
+  height: 5.6rem;
+  margin: 1rem auto 0;
+  font-size: var(--text-normal);
+}
+.register .auth-btn {
+  margin-top: 1.8rem;
 }
 /* <-------------login/register page ends---------> */
 
 /* <-------------tablet styles---------> */
 @media screen and (max-width: 850px) {
-  /* <-------------header starts---------> */
+  /* <-------------header---------> */
   .header .logo {
     display: none;
   }
@@ -299,12 +340,21 @@ button {
     background-color: var(--color-off-white);
   }
 
-  /* <-------------terms page starts---------> */
+  /* <-------------terms page---------> */
   .terms .main .terms-content {
     max-width: 100%;
+  }
+  /* <-------------auth pages---------> */
+  .auth .auth-btn {
+    width: 20rem;
   }
 }
 
 /* <-------------mobile styles---------> */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
+  /* <-------------auth pages---------> */
+  .auth .content {
+    max-width: 100%;
+    padding: 4rem 2rem;
+  }
 }
