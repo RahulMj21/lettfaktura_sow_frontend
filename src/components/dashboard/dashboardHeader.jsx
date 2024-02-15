@@ -6,7 +6,10 @@ const DashboardHeader = () => {
       <div className="container">
         <div className="user">
           <div className="user-avatar">
-            <img src="https://github.com/rahulmj21.png" alt="user avatar" />
+            <img
+              src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+              alt="user avatar"
+            />
           </div>
           <div className="user-details">
             <p className="user-name">Rahul Mondal</p>
