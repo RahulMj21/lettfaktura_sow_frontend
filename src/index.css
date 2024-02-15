@@ -3,11 +3,16 @@
   /* colors  */
   --color-white: #fff;
   --color-red: #ff0000;
+  --color-blue: #0f7ee8;
+  --color-light-blue: #60a1d3;
+  --color-light-gray: #eaedf0;
   --color-off-white: #ccc;
   --color-black: #000;
+  --color-dark: #2d3748;
   --color-green: #089e1e;
 
   /* font sizes */
+  --text-xs: 1.2rem;
   --text-sm: 1.4rem;
   --text-md: 1.5rem;
   --text-lg: 1.8rem;
@@ -18,6 +23,11 @@
   /* font weights */
   --font-normal: 400;
   --font-semibold: 600;
+
+  /* utility */
+  --background-image: url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg)
+    center top/cover fixed;
+  --shadow-md: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 *,
 *::before,
@@ -124,26 +134,25 @@ button {
 .header .nav a:hover {
   color: var(--color-off-white);
 }
-.header .flag {
+.flag {
   height: 1.8rem;
   width: 2.6rem;
 }
-.header .language-switcher {
+.language-switcher {
   position: relative;
 }
-.header .language-switcher-btn {
+.language-switcher-btn {
   background-color: transparent;
   color: var(--color-white);
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.4rem;
   font-weight: var(--font-semibold);
 }
-.header .language-switcher .language-switcher-dropdown {
+.language-switcher .language-switcher-dropdown {
   position: absolute;
   top: 2.6rem;
   right: 0;
-  background-color: var(--color-white);
   height: max-content;
   border-radius: 1rem;
   padding: 0.8rem 0.4rem;
@@ -151,8 +160,10 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
 }
-.header .language-switcher .dropdown-btn {
+.language-switcher .dropdown-btn {
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -163,8 +174,8 @@ button {
   border-radius: 0.4rem;
   transition: 0.45s;
 }
-.header .language-switcher .dropdown-btn:hover {
-  background-color: var(--color-off-white);
+.language-switcher .dropdown-btn:hover {
+  background-color: var(--color-light-gray);
 }
 /* <-------------header ends---------> */
 
@@ -199,6 +210,82 @@ button {
 /* <-------------terms page ends---------> */
 
 /* <-------------dashboard page starts---------> */
+.dashboard {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-header {
+  background: var(--color-blue);
+  display: flex;
+  color: var(--color-white);
+}
+.dashboard-header .container {
+  width: 128rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9rem;
+}
+.dashboard-header .user {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.dashboard-header .user-avatar {
+  position: relative;
+}
+.dashboard-header .user-avatar img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+.dashboard-header .user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.dashboard-header .user-name {
+  font-size: var(--text-normal);
+}
+.dashboard-header .user-address {
+  font-size: var(--text-xs);
+}
+.dashboard .content {
+  display: flex;
+  flex: 1;
+  color: var(--color-dark);
+}
+.dashboard .sidebar {
+  width: 22rem;
+  box-shadow: var(--shadow-md);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.dashboard .sidebar-heading {
+  text-align: center;
+  width: 86%;
+  padding: 0.4rem 0;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--color-light-blue);
+}
+.dashboard .sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dashboard .sidebar-link {
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.5rem;
+  transition: background 0.4s ease;
+}
+.dashboard .sidebar-link:hover {
+  background: var(--color-light-gray);
+}
 /* <-------------dashboard page ends---------> */
 
 /* <-------------login/register page starts---------> */

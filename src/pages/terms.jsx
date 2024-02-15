@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import Header from "../components/header";
+import Header from "../components/common/header";
 
 const termsContent = `
 <p><span>VED Å</span> klikke på Fakturere Nå så velger dere å laste ned ifølge den informasjon som dere har lagt inn og teksten på last ned siden og vilkårene her, og aksepterer samtidig vilkårene her.</p>
@@ -39,10 +39,7 @@ const Terms = () => {
   return (
     <div
       className="terms page"
-      style={{
-        background:
-          "url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg) center/cover fixed",
-      }}
+      style={{ background: "var(--background-image)" }}
     >
       <Header />
       <main className="main">

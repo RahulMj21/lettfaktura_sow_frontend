@@ -1,13 +1,10 @@
-import Header from "../components/header";
+import Header from "../components/common/header";
 
 const Login = () => {
   return (
     <div
       className="page auth login"
-      style={{
-        background:
-          "url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg) center/cover fixed",
-      }}
+      style={{ background: "var(--background-image)" }}
     >
       <Header />
       <main className="main">
