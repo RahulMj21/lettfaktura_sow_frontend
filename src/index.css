@@ -74,6 +74,12 @@ button {
   font: inherit;
   cursor: pointer;
 }
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid var(--color-cyan);
+}
 
 /* <-------------styling presets ends--------> */
 
@@ -219,7 +225,7 @@ button {
 .dashboard {
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -279,7 +285,7 @@ button {
 }
 .dashboard .sidebar-heading {
   text-align: center;
-  width: 86%;
+  width: 84%;
   padding: 0.4rem 0;
   margin: 0 auto;
   border-bottom: 2px solid var(--color-light-blue);
@@ -290,7 +296,7 @@ button {
   gap: 0.5rem;
 }
 .dashboard .sidebar-link {
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 0.5rem;
   transition: background 0.4s ease;
 }
@@ -306,12 +312,12 @@ button {
 }
 .dashboard .sidebar-link .link-group .dot {
   display: none;
-  height: 1rem;
-  width: 1rem;
+  height: 1.1rem;
+  width: 1.1rem;
   position: absolute;
   background: var(--color-light-green);
   border-radius: 50%;
-  left: -1.5rem;
+  left: -1.7rem;
 }
 .dashboard .sidebar-link .link-group .dot.active {
   display: inline-block;
@@ -340,7 +346,7 @@ button {
   display: flex;
   align-items: center;
   color: var(--color-dark);
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem 1.6rem;
   gap: 0.8rem;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
@@ -372,10 +378,36 @@ button {
 }
 .price-list-actions {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
 }
+.price-list-actions .search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.search-group .search-input {
+  position: relative;
+}
+.search-group .search-input input {
+  border: 1px solid var(--color-off-white);
+  border-radius: 4rem;
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  width: 30rem;
+  font-size: var(--text-md);
+}
+
+.search-group .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  height: 1.7rem;
+  width: 1.7rem;
+  transform: translateY(-50%);
+  stroke: var(--color-sky-blue);
+}
+
 .price-list-actions .btn-group {
   display: flex;
   align-items: center;
@@ -571,14 +603,56 @@ button {
     width: 90%;
     margin: 0 auto;
   }
+  /* price-list content */
+  .price-list-actions .btn-group .action-button {
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+  }
+  .price-list-actions .btn-group .action-button span {
+    display: none;
+  }
+}
+/* <-------------mobile landscape styles---------> */
+@media screen and (max-width: 650px) {
+  /* price-list content */
+  .price-list-actions .search-group {
+    width: 100%;
+  }
+  .search-group .search-input input {
+    width: 100%;
+  }
+  .price-list-actions {
+    flex-direction: column;
+  }
+  .price-list-actions .btn-group {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .price-list-actions .btn-group .action-button {
+    padding: 1rem 4rem;
+  }
 }
 
-/* <-------------mobile styles---------> */
-@media screen and (max-width: 500px) {
+/* <-------------mobile portrait styles---------> */
+@media screen and (max-width: 480px) {
   /* <-------------auth pages---------> */
   .auth .content {
     max-width: 100%;
     padding: 4rem 2rem;
   }
-  /* <-------------dashboard page---------> */
+  /* <-------------price-list page---------> */
+  .price-list-actions .btn-group {
+    gap: 1.6rem;
+  }
+}
+
+/* <-------------mobile with very small screen---------> */
+@media screen and (max-width: 350px) {
+  /* <-------------price-list page---------> */
+  .price-list-actions .btn-group {
+    gap: 1.4rem;
+  }
+  .price-list-actions .btn-group .action-button {
+    padding: 1rem 3rem;
+  }
 }
