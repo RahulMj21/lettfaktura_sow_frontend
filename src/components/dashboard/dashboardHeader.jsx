@@ -1,9 +1,27 @@
+import { useState } from "react";
 import LanguageSwitcher from "../common/languageSwitcher";
+import HamburgerIcon from "../icons/hamburger";
 
 const DashboardHeader = () => {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const toggleMobileNav = () => {
+    setShowMobileNav((prev) => !prev);
+  };
+
+  const closeMobileNav = () => {
+    setShowMobileNav(false);
+  };
   return (
     <header className="dashboard-header">
       <div className="container">
+        <button className="hamburger" onClick={toggleMobileNav}>
+          <HamburgerIcon />
+        </button>
+        <div
+          onClick={closeMobileNav}
+          className={`nav-overlay ${showMobileNav ? "show" : ""}`}
+        />
         <div className="user">
           <div className="user-avatar">
             <img

@@ -12,13 +12,14 @@ import {
   Warehouse,
   XCircle,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const sidebarLinks = [
   { text: "Invoices", href: "/", isDisabled: false },
   { text: "Customer", href: "/", isDisabled: false },
   { text: "My Business", href: "/", isDisabled: false },
   { text: "Invoice Journal", href: "/", isDisabled: false },
-  { text: "Price List", href: "/", isDisabled: false },
+  { text: "Price List", href: "/dashboard/pricelist", isDisabled: false },
   { text: "Multiple Invoicing", href: "/", isDisabled: false },
   { text: "Unpaid Invoices", href: "/", isDisabled: false },
   { text: "Offer", href: "/", isDisabled: false },
@@ -40,6 +41,8 @@ const linkIcons = {
   "Import/Export": <UploadCloud className="sidebar-link-icon cyan" />,
 };
 const DashboardSidebar = () => {
+  const { pathname } = useLocation();
+
   return (
     <aside className="sidebar">
       <h2 className="sidebar-heading">Menu</h2>
@@ -47,7 +50,7 @@ const DashboardSidebar = () => {
         {sidebarLinks.map(({ text, href }) => (
           <a className="sidebar-link" key={text} href={href}>
             <div className="link-group">
-              <span className="dot" />
+              <span className={`dot ${pathname === href ? "active" : ""}`} />
               {linkIcons[text]}
               {text}
             </div>
