@@ -96,7 +96,8 @@ span {
   margin: 0 auto;
 }
 .page {
-  min-height: 100vh;
+  min-height: 115vh;
+  padding-bottom: 15vh;
 }
 .btn-primary {
   padding: 1.2rem 4rem;
@@ -198,9 +199,9 @@ span {
 /* <-------------header ends---------> */
 
 /* <-------------terms page starts---------> */
-.terms {
-  min-height: auto;
-}
+/* .terms { */
+/*   min-height: auto; */
+/* } */
 .terms .main .container {
   display: flex;
   flex-direction: column;
