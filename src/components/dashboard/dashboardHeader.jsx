@@ -1,29 +1,27 @@
-import { useState } from "react";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HamburgerIcon from "../icons/hamburger";
 
 const DashboardHeader = () => {
-  const [showMobileNav, setShowMobileNav] = useState(false);
-
   const toggleMobileNav = () => {
-    setShowMobileNav((prev) => !prev);
+    document.querySelector(".nav-overlay").classList.toggle("show");
+    document.querySelector(".sidebar").classList.toggle("show");
   };
 
   const closeMobileNav = () => {
-    setShowMobileNav(false);
+    document.querySelector(".nav-overlay").classList.remove("show");
+    document.querySelector(".sidebar").classList.remove("show");
   };
+
   return (
     <header className="dashboard-header">
       <div className="container">
         <button className="hamburger" onClick={toggleMobileNav}>
           <HamburgerIcon />
         </button>
-        <div
-          onClick={closeMobileNav}
-          className={`nav-overlay ${showMobileNav ? "show" : ""}`}
-        />
+        <div onClick={closeMobileNav} className="nav-overlay show" />
         <div className="user">
           <div className="user-avatar">
+            <span className="active-dot" />
             <img
               src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
               alt="user avatar"
