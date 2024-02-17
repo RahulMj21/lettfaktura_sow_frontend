@@ -199,8 +199,7 @@ span {
 
 /* <-------------terms page starts---------> */
 .terms {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: auto;
 }
 .terms .main .container {
   display: flex;
