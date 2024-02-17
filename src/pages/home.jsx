@@ -1,13 +1,12 @@
-import Header from "../components/common/header";
+import PublicLayout from "../components/common/publicLayout";
 
 const Home = () => {
   return (
-    <div
-      className="home page"
-      style={{ background: "var(--background-image)" }}
-    >
-      <Header />
-    </div>
+    <PublicLayout className="home">
+      <div className="container">
+        <h1>Home Page</h1>
+      </div>
+    </PublicLayout>
   );
 };
 

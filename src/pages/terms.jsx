@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import Header from "../components/common/header";
+import PublicLayout from "../components/common/publicLayout";
 
 const termsContent = `
 <p><span>VED Å</span> klikke på Fakturere Nå så velger dere å laste ned ifølge den informasjon som dere har lagt inn og teksten på last ned siden og vilkårene her, og aksepterer samtidig vilkårene her.</p>
@@ -36,12 +36,9 @@ const Terms = () => {
   useEffect(() => {
     if (contentRef.current) contentRef.current.innerHTML = termsContent;
   }, []);
+
   return (
-    <div
-      className="terms page"
-      style={{ background: "var(--background-image)" }}
-    >
-      <Header />
+    <PublicLayout className="terms">
       <main className="main">
         <div className="container">
           <h1 className="terms-heading">Terms</h1>
@@ -50,7 +47,7 @@ const Terms = () => {
           <button className="btn-primary back-button">Close and Go Back</button>
         </div>
       </main>
-    </div>
+    </PublicLayout>
   );
 };
 

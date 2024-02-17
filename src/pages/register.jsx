@@ -1,12 +1,8 @@
-import Header from "../components/common/header";
+import PublicLayout from "../components/common/publicLayout";
 
 const Register = () => {
   return (
-    <div
-      className="page auth register"
-      style={{ background: "var(--background-image)" }}
-    >
-      <Header />
+    <PublicLayout className="auth register">
       <main className="main">
         <div className="container">
           <div className="content">
@@ -49,7 +45,7 @@ const Register = () => {
           </div>
         </div>
       </main>
-    </div>
+    </PublicLayout>
   );
 };
 

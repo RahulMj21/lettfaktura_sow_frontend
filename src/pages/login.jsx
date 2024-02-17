@@ -1,12 +1,8 @@
-import Header from "../components/common/header";
+import PublicLayout from "../components/common/publicLayout";
 
 const Login = () => {
   return (
-    <div
-      className="page auth login"
-      style={{ background: "var(--background-image)" }}
-    >
-      <Header />
+    <PublicLayout className="auth login">
       <main className="main">
         <div className="container">
           <div className="content">
@@ -35,7 +31,7 @@ const Login = () => {
           </div>
         </div>
       </main>
-    </div>
+    </PublicLayout>
   );
 };
 

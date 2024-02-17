@@ -198,6 +198,9 @@ span {
 /* <-------------header ends---------> */
 
 /* <-------------terms page starts---------> */
+.terms {
+  min-height: -webkit-fill-available;
+}
 .terms .main .container {
   display: flex;
   flex-direction: column;

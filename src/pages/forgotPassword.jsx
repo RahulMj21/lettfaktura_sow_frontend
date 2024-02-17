@@ -1,12 +1,8 @@
-import Header from "../components/common/header";
+import PublicLayout from "../components/common/publicLayout";
 
 const ForgotPassword = () => {
   return (
-    <div
-      className="page auth forgot-password"
-      style={{ background: "var(--background-image)" }}
-    >
-      <Header />
+    <PublicLayout className="auth forgot-password">
       <main className="main">
         <div className="container">
           <div className="content">
@@ -22,7 +18,7 @@ const ForgotPassword = () => {
           </div>
         </div>
       </main>
-    </div>
+    </PublicLayout>
   );
 };
 
