@@ -113,6 +113,25 @@ span {
   background-color: var(--color-green);
 }
 
+.fullscreen-loader {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(60deg, var(--color-sky-blue), var(--color-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.loader-icon {
+  stroke: var(--color-white);
+  height: 3.8rem;
+  width: 3.8rem;
+  animation: spin 0.4s ease-out infinite;
+}
+
 /* <-------------utility classes---------> */
 
 /* <-------------header starts---------> */
@@ -716,5 +735,15 @@ span {
   /* <-------------price-list page---------> */
   .price-list-actions .btn-group .action-button {
     padding: 1rem 3rem;
+  }
+}
+
+/* <-------------Aminations-----------> */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
