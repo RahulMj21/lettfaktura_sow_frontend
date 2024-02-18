@@ -16,6 +16,7 @@ const PublicLayout = ({ className, children }) => {
         src="https://storage.123fakturere.no/public/wallpapers/geiranger.jpg"
         alt="background-wallpaper"
         className="background-wallpaper"
+        load="lazy"
       />
       {isPending && <FullscreenLoader />}
       {data && (

@@ -32,3 +32,14 @@ export const fetchTerms = async () => {
     return null;
   }
 };
+
+export const fetchProducts = async () => {
+  try {
+    const res = await api.get("/product/all");
+    const data = res.data;
+
+    return data.data;
+  } catch (error) {
+    return null;
+  }
+};
