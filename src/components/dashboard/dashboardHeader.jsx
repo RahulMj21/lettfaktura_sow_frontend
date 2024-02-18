@@ -18,7 +18,7 @@ const DashboardHeader = () => {
         <button className="hamburger" onClick={toggleMobileNav}>
           <HamburgerIcon />
         </button>
-        <div onClick={closeMobileNav} className="nav-overlay show" />
+        <div onClick={closeMobileNav} className="nav-overlay" />
         <div className="user">
           <div className="user-avatar">
             <span className="active-dot" />
