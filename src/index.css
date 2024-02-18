@@ -32,8 +32,6 @@
   --font-semibold: 600;
 
   /* utility */
-  --background-image: url(https://storage.123fakturere.no/public/wallpapers/geiranger.jpg)
-    center top/cover fixed;
   --shadow-md: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 *,
@@ -96,8 +94,15 @@ span {
   margin: 0 auto;
 }
 .page {
-  min-height: 115vh;
-  padding-bottom: 15vh;
+  position: relative;
+  min-height: 100dvh;
+}
+.background-wallpaper {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 .btn-primary {
   padding: 1.2rem 4rem;
@@ -199,9 +204,6 @@ span {
 /* <-------------header ends---------> */
 
 /* <-------------terms page starts---------> */
-/* .terms { */
-/*   min-height: auto; */
-/* } */
 .terms .main .container {
   display: flex;
   flex-direction: column;
