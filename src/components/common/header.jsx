@@ -3,19 +3,7 @@ import HambugerIcon from "../icons/hamburger";
 import LanguageSwitcher from "./languageSwitcher";
 import { Link } from "react-router-dom";
 
-const headerProps = {
-  links: [
-    { text: "home", href: "/" },
-    { text: "orders", href: "/orders" },
-    { text: "our_customer", href: "/customers" },
-    { text: "about_us", href: "/about" },
-    { text: "contact_us", href: "/contact" },
-  ],
-};
-
-const Header = () => {
-  const { links } = headerProps;
-
+const Header = ({ links }) => {
   const [showMobileNav, setShowMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
@@ -44,8 +32,8 @@ const Header = () => {
             />
           </Link>
           <nav className={`nav ${showMobileNav ? "show" : ""}`}>
-            {links.map((link) => (
-              <Link className="nav-link" to={link.href} key={link.text}>
+            {links?.map((link) => (
+              <Link className="nav-link" to={link.href} key={link.id}>
                 {link.text.replaceAll("_", " ")}
               </Link>
             ))}

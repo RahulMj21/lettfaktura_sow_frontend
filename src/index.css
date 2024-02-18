@@ -113,6 +113,25 @@ span {
   background-color: var(--color-green);
 }
 
+.fullscreen-loader {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(60deg, var(--color-sky-blue), var(--color-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.loader-icon {
+  stroke: var(--color-white);
+  height: 3.8rem;
+  width: 3.8rem;
+  animation: spin 0.4s ease-out infinite;
+}
+
 /* <-------------utility classes---------> */
 
 /* <-------------header starts---------> */
@@ -151,12 +170,12 @@ span {
   text-transform: capitalize;
   white-space: nowrap;
   font-weight: var(--font-semibold);
-  transition:
-    color 0.4s,
-    background-color 0.4s;
 }
 .header .nav a:hover {
   color: var(--color-off-white);
+  transition:
+    color 0.4s,
+    background-color 0.4s;
 }
 .flag {
   height: 1.8rem;
@@ -467,16 +486,29 @@ span {
 }
 
 /* products table */
+.products-table-container {
+  position: relative;
+  width: 100%;
+}
+.products-table-container .row-indicator {
+  position: absolute;
+  left: -1.3rem;
+  bottom: 0.8rem;
+  height: 2rem;
+  width: 2rem;
+  stroke: var(--color-sky-blue);
+}
 .products-table {
   color: var(--color-dark);
   border-collapse: separate;
   border-spacing: 1rem 0.5rem;
+  width: 100%;
 }
 .products-table th,
 .products-table td {
   text-align: left;
   white-space: nowrap;
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   font-weight: var(--font-normal);
 }
 .products-table th {
@@ -486,9 +518,16 @@ span {
 .products-table td {
   padding: 0 0.8rem;
 }
+.products-table td:nth-child(2),
+.products-table td:nth-child(7) {
+  width: 100%;
+}
+.products-table td:last-child {
+  width: 1rem;
+}
 .products-table td:not(:last-child) {
   border: 1px solid var(--color-dimm-blue);
-  border-radius: 4rem;
+  border-radius: 1.13rem;
 }
 .product-row-btn svg {
   stroke: var(--color-sky-blue);
@@ -577,8 +616,42 @@ span {
 }
 /* <-------------login/register page ends---------> */
 
+/* <-------------medium-large screen styles---------> */
+@media screen and (max-width: 1200px) {
+  /* dashboard header */
+  .dashboard-header .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 3rem;
+  }
+  .dashboard-header .user {
+    display: none;
+  }
+  /* dashboard sidebar */
+  .dashboard .sidebar {
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    padding-top: 4rem;
+    transform: translateX(-26rem);
+  }
+  .dashboard .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .dashboard .hamburger {
+    display: inline-block;
+  }
+  /* dashboard content */
+  .dashboard .main {
+    padding: 2rem;
+    margin: 0 auto;
+  }
+}
+
 /* <-------------tablet styles---------> */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   /* <-------------header---------> */
   .header .logo {
     display: none;
@@ -642,30 +715,7 @@ span {
   .auth .auth-btn {
     width: 20rem;
   }
-  /* <-------------dashboard page---------> */
-  /* dashboard header */
-  .dashboard-header .user {
-    display: none;
-  }
-  /* dashboard sidebar */
-  .dashboard .sidebar {
-    height: 100vh;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    padding-top: 4rem;
-    transform: translateX(-26rem);
-  }
-  .dashboard .sidebar.show {
-    transform: translateX(0);
-  }
-  /* dashboard content */
-  .dashboard .main {
-    padding: 2rem 0;
-    width: 90%;
-    margin: 0 auto;
-  }
-  /* price-list content */
+  /* <-------------pricelist page---------> */
   .price-list-actions .btn-group {
     flex-wrap: nowrap;
   }
@@ -674,6 +724,12 @@ span {
     border-radius: 3rem;
   }
   .price-list-actions .btn-group .action-button span {
+    display: none;
+  }
+  .products-table th:nth-child(3),
+  .products-table th:nth-child(7),
+  .products-table tr td:nth-child(3),
+  .products-table tr td:nth-child(7) {
     display: none;
   }
 }
@@ -696,6 +752,16 @@ span {
   .price-list-actions .btn-group .action-button {
     padding: 1rem 4rem;
   }
+  .products-table th:nth-child(1),
+  .products-table th:nth-child(3),
+  .products-table th:nth-child(5),
+  .products-table th:nth-child(6),
+  .products-table tr td:nth-child(1),
+  .products-table tr td:nth-child(3),
+  .products-table tr td:nth-child(5),
+  .products-table tr td:nth-child(6) {
+    display: none;
+  }
 }
 
 /* <-------------mobile portrait styles---------> */
@@ -716,5 +782,15 @@ span {
   /* <-------------price-list page---------> */
   .price-list-actions .btn-group .action-button {
     padding: 1rem 3rem;
+  }
+}
+
+/* <-------------Aminations-----------> */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
